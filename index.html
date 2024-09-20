@@ -394,7 +394,7 @@
                 </h3>
                 <div class="border-b-2 border-dashed my-4"></div>
                 <ul id="selected-seat" class="space-y-5">
-                  <h3
+                  <h3 id="default-text"
                     class="text-3xl font-semibold text-error capitalize text-center"
                   >
                     No Seat Booked
@@ -409,7 +409,7 @@
                   </p>
                 </div>
                 <div class="border-b-2 border-dashed my-4"></div>
-                <div class="flex items-center gap-2 border-y-2 py-2 my-2 border-dashed text-lg font-semibold justify-between">
+                <div id="show-coupon-price" class="flex items-center gap-2 border-y-2 py-2 my-2 border-dashed text-lg font-semibold justify-between">
                   <input id="coupon-field" class="input my-5 w-full input-primary border-primary border-primary" disabled type="text" placeholder="have a coupon?">
                   <button id="coupon-btn" class="btn bg-primary" disabled>Apply</button>
                 </div>
@@ -417,15 +417,15 @@
                   <p>Grand Price</p>
                   <p>
                     <span>BDT:</span>
-                    <span>****</span>
+                    <span id="grand-total">****</span>
                   </p>
                 </div>
-                <div class="border-b-2 border-dashed my-4"></div>
+                <!-- <div class="border-b-2 border-dashed my-4"></div> -->
 
               </div>
 
               <!-- Form section  -->
-              <div class="my-5">
+              <div id="form-show" class="hidden my-5">
                 <label class="form-control w-full my-3">
                   <div class="label">
                     <span class="label-text-alt font-bold text-base">Passenger Name*</span>
@@ -437,7 +437,7 @@
                   <div class="label">
                     <span class="label-text-alt font-bold text-base">Phone Number*</span>
                   </div>
-                  <input type="number" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
+                  <input id="phone-number" type="number" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
                   
                 </label>
                 <label class="form-control w-full my-3">
@@ -448,7 +448,7 @@
                   
                 </label>
                 <!-- Open the modal using ID.showModal() method -->
-                      <button class="btn bg-primary mt-5 text-lg text-white uppercase w-full" onclick="my_modal_1.showModal()">Next</button>
+                      <button disabled id="next-btn" class="btn bg-primary mt-5 text-lg text-white uppercase w-full" onclick="my_modal_1.showModal()">Next</button>
                       <dialog id="my_modal_1" class="modal">
                         <div class="modal-box">
                           <h3 class="text-lg font-bold">Hello!</h3>
@@ -456,7 +456,7 @@
                           <div class="modal-action">
                             <form method="dialog">
                               <!-- if there is a button in form, it will close the modal -->
-                              <button class="btn">Close</button>
+                              <button id="btn-container" class="btn">Close</button>
                             </form>
                           </div>
                         </div>
@@ -475,3 +475,5 @@
     <script src="app.js"></script>
   </body>
 </html>
+
+
